@@ -53,7 +53,8 @@ const CpuPower = new Lang.Class({
     _update_freq: function() {
         let freqInfo=null;
 
-        let cpupower_output = GLib.spawn_command_line_sync(this._cpupower+" frequency-info -wm");
+        let cpupower_output = GLib.spawn_command_line_sync(this._cpupower+" frequency-info -fm");
+        if (!cpupower_output[1]) cpupower_output = GLib.spawn_command_line_sync(this._cpupower+" frequency-info -wm"); // try with sticky bit
         if (cpupower_output[1]) freqInfo = cpupower_output[1].toString().split("\n")[1];
 
         this._status.set_text((freqInfo)?freqInfo:"no sticky bit cpupower");
