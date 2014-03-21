@@ -1,0 +1,7 @@
+{
+    "shell-version": ["3.10"],
+    "uuid": "cpupower@extensions.mainnika.ru",
+    "name": "CpuPower Menu",
+    "description": "View CPU Frequency",
+    "url": "https://bitbucket.org/mainnika/gnome-shell-extension-cpupower"
+}
